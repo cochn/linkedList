@@ -1,6 +1,7 @@
 # linkedList
 线性表的链式存储
-/**创建linkedList*/
+//创建linkedList
+```
 LinkedList * linkedListCreate(){
     
     LinkedList *list = malloc(sizeof(LinkedList) + sizeof(LinkedListNode));
@@ -11,8 +12,10 @@ LinkedList * linkedListCreate(){
     }
     return list;
 }
+```
 
-/**销毁*/
+//销毁
+```
 void linkedListFree(LinkedList * list){
     
     if (list == NULL) return;
@@ -20,8 +23,9 @@ void linkedListFree(LinkedList * list){
     linkedListClear(list);
     free(list);
 }
-
-/**清空*/
+```
+//清空
+```
 void linkedListClear(LinkedList * list){
     
     if (list == NULL) return;
@@ -37,16 +41,18 @@ void linkedListClear(LinkedList * list){
     
     list->length = 0;
 }
-
-/**获取线性表的长度*/
+```
+//获取线性表的长度
+```
 int linkedListLength(LinkedList * list){
     
     if (list == NULL) return 0;
     
     return list->length;
 }
-
-/**获取LinkedListNodeValue*/
+```
+//获取LinkedListNodeValue
+```
 LinkedListNodeValue linkedListNode(LinkedList * list, int index){
     
     if (list == NULL || index < 0 || index >= list->length) {
@@ -59,8 +65,11 @@ LinkedListNodeValue linkedListNode(LinkedList * list, int index){
     }
     return currentNode->value;
 }
+```
 
-/**插入数据*/
+//插入数据
+
+```
 void linkedListInsertNode(LinkedList * list,int index ,LinkedListNodeValue * value){
     
     if (list == NULL || index < 0 || index > list->length ) {
@@ -81,13 +90,16 @@ void linkedListInsertNode(LinkedList * list,int index ,LinkedListNodeValue * val
     
     list->length ++;
 }
-
-/**添加数据*/
+```
+//添加数据
+```
 void linkedListAddNode(LinkedList * list,LinkedListNodeValue *value){
     linkedListInsertNode(list, list->length, value);
 }
+```
 
-/**设置元素*/
+//设置元素
+```
 void linkedListSetValue(LinkedList * list, int index, LinkedListNodeValue * value){
     
     if (list == NULL || index < 0 || index >= list->length || value == NULL) {
@@ -101,8 +113,9 @@ void linkedListSetValue(LinkedList * list, int index, LinkedListNodeValue * valu
     
     currentNode->value = value;
 }
-
-/**删除元素*/
+```
+//删除元素
+```
 void linkedListRemoveNode(LinkedList * list, int index){
     
     if (list == NULL || index < 0 || index >= list->length) {
@@ -122,8 +135,9 @@ void linkedListRemoveNode(LinkedList * list, int index){
     
     list->length --;
 }
-
-/**删除所有的value*/
+```
+//删除所有的value
+```
 void linkedListRemoveAllValue(LinkedList * list, LinkedListNodeValue * value){
     
     if (list == NULL) {
@@ -152,3 +166,4 @@ void linkedListRemoveAllValue(LinkedList * list, LinkedListNodeValue * value){
     }
     
 }
+```
